@@ -170,7 +170,7 @@ modify_nginx(){
 }
 web_camouflage(){
     ##请注意 这里和LNMP脚本的默认路径冲突，千万不要在安装了LNMP的环境下使用本脚本，否则后果自负
-    rm -rf /home/wwwwebroot && mkdir -p /home/wwwwebroot && cd /home/wwwwebroot
+    rm -rf /home/webroot && mkdir -p /home/webroot && cd /home/webroot
     git clone https://github.com/wulabing/sCalc.git
     judge "web 站点伪装"   
 }
@@ -292,7 +292,7 @@ nginx_conf_add(){
         ssl_ciphers           HIGH:!aNULL:!MD5;
         server_name           serveraddr.com;
         index index.html index.htm;
-        root  /home/wwwwebroot/sCalc;
+        root  /home/webroot/sCalc;
         error_page 400 = /400.html;
         location /ray/ 
         {
@@ -384,4 +384,3 @@ main(){
 }
 
 main
-
