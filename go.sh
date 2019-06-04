@@ -42,8 +42,8 @@ BLUE="36m"     # Info message
 while [[ $# > 0 ]];do
     key="$1"
     case $key in
-        -p|--proxy)
-        PROXY="-x ${2}"
+        -v|--ver)
+        VERSION="$2"
         shift # past argument
         ;;
         -h|--help)
