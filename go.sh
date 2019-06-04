@@ -42,44 +42,9 @@ BLUE="36m"     # Info message
 while [[ $# > 0 ]];do
     key="$1"
     case $key in
-        -v|--ver)
+        -v)
         VERSION="$2"
         shift # past argument
-        ;;
-        -h|--help)
-        HELP="1"
-        ;;
-        -f|--force)
-        FORCE="1"
-        ;;
-        -c|--check)
-        CHECK="1"
-        ;;
-        --remove)
-        REMOVE="1"
-        ;;
-        --ver)
-        VERSION="$2"
-        shift
-        ;;
-        --extract)
-        VSRC_ROOT="$2"
-        shift
-        ;;
-        --extractonly)
-        EXTRACT_ONLY="1"
-        ;;
-        -l|--local)
-        LOCAL="$2"
-        LOCAL_INSTALL="1"
-        shift
-        ;;
-        --source)
-        DIST_SRC="$2"
-        shift
-        ;;
-        --errifuptodate)
-        ERROR_IF_UPTODATE="1"
         ;;
         *)
                 # unknown option
