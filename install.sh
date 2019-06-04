@@ -180,7 +180,7 @@ v2ray_install(){
     fi
 
     mkdir -p /root/v2ray && cd /root/v2ray
-    wget  --no-check-certificate https://install.direct/go.sh --version v4.18
+    wget --no-check-certificate -v v4.18 https://raw.githubusercontent.com/breakwa2333/v2ray-onekey/master/go.sh
 
     ## wget http://install.direct/go.sh
     
