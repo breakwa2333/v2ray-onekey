@@ -185,7 +185,7 @@ v2ray_install(){
     ## wget http://install.direct/go.sh
     
     if [[ -f go.sh ]];then
-        bash go.sh --force --version v4.18
+        bash go.sh --force --version v4.18.0
         judge "安装 V2ray"
     else
         echo -e "${Error} ${RedBG} V2ray 安装文件下载失败，请检查下载地址是否可用 ${Font}"
