@@ -7,5 +7,5 @@ Tips:
   * Allow TLS1.2 only
 Useage:
 ```
-bash <(curl -L -s https://raw.githubusercontent.com/breakwa2333/v2ray-onekey/master/install.sh) | tee v2ray_ins.log
+bash <(curl -L -s dos2unix https://raw.githubusercontent.com/breakwa2333/v2ray-onekey/master/install.sh) | tee v2ray_ins.log
 ```
