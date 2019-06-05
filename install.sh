@@ -259,6 +259,7 @@ port_exist_check(){
         sleep 1
     fi
 }
+
 acme(){
     ~/.acme.sh/acme.sh --issue -d ${domain} --standalone -k ec-384 --force
     if [[ $? -eq 0 ]];then
@@ -363,9 +364,9 @@ main(){
     dependency_install
     domain_check
     port_alterid_set
-    v2ray_install
     port_exist_check 80
     port_exist_check ${port}
+    v2ray_install
     nginx_install
     v2ray_conf_add
     nginx_conf_add
