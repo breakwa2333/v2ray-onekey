@@ -302,6 +302,7 @@ nginx_conf_add(){
         proxy_set_header Upgrade \$http_upgrade;
         proxy_set_header Connection "upgrade";
         proxy_set_header Host \$http_host;
+        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
         }
 }
     server {
