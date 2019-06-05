@@ -7,7 +7,7 @@
   * Allow AES-GCM only
   * ECC384
   * HSTS
-### * Useage(Websocket+TLS+Nginx):
+### Useage(Websocket+TLS+Nginx):
 ```
 bash <(curl -L -s dos2unix https://raw.githubusercontent.com/breakwa2333/v2ray-onekey/master/install.sh) | tee v2ray_ins.log
 ```
