@@ -12,5 +12,5 @@
 bash <(curl -L -s dos2unix https://raw.githubusercontent.com/breakwa2333/v2ray-onekey/master/install.sh) | tee v2ray_ins.log
 ```
 ### Goal:
-* Remove old version v2ray before installing
+* Remove installed file before installing
 * Random camouflage website
