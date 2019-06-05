@@ -289,7 +289,7 @@ nginx_conf_add(){
         ssl_certificate       /etc/v2ray/v2ray.crt;
         ssl_certificate_key   /etc/v2ray/v2ray.key;
         ssl_protocols         TLSv1.2;
-        ssl_ciphers           HIGH:!aNULL:!MD5;
+        ssl_ciphers           AESGCM;
         server_name           serveraddr.com;
         index index.html index.htm;
         root  /home/webroot/sCalc;
@@ -302,8 +302,8 @@ nginx_conf_add(){
         proxy_set_header Upgrade \$http_upgrade;
         proxy_set_header Connection "upgrade";
         proxy_set_header Host \$http_host;
-        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
         }
+        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 }
     server {
         listen 80;
