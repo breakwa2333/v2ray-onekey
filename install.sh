@@ -171,7 +171,7 @@ modify_nginx(){
 web_camouflage(){
     ##请注意 这里和LNMP脚本的默认路径冲突，千万不要在安装了LNMP的环境下使用本脚本，否则后果自负
     rm -rf /home/webroot && mkdir -p /home/webroot && mkdir -p /home/webtemp
-    pathing=$[$[$RANDOM % 4] + 1] 
+    pathing=$[$[$RANDOM % 5] + 1] 
     wget https://github.com/breakwa2333/v2ray-onekey/blob/Test/template/$pathing.zip?raw=true -O /home/webtemp/$pathing.zip
     unzip -d /home/webroot /home/webtemp/$pathing.zip
     judge "web 站点伪装"   
