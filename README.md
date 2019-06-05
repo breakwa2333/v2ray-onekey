@@ -1,5 +1,5 @@
 ### This is a security enhanced version compare to wulabing's script
-### Wulabing's original script is [here](https://github.com/wulabing/V2Ray_ws-tls_bash_onekey) thanks wulabing's contribution
+### Wulabing's original script is [here](https://github.com/wulabing/V2Ray_ws-tls_bash_onekey)  and thanks wulabing's contribution
 ### Tips:
 * Changelog
   * Fixed the V2ray viersion at 4.18
