@@ -2,9 +2,9 @@
 
 #====================================================
 #	System Request:Debian 7+/Ubuntu 14.04+/Centos 6+
-#	Author:	wulabing
+#	Author:	wulabing,breakwa2333
 #	Dscription: V2ray ws+tls onekey 
-#	Version: 3.3.1
+#	Version: 1.0.0
 #	Blog: https://www.wulabing.com
 #	Official document: www.v2ray.com
 #====================================================
@@ -171,7 +171,7 @@ modify_nginx(){
 web_camouflage(){
     ##请注意 这里和LNMP脚本的默认路径冲突，千万不要在安装了LNMP的环境下使用本脚本，否则后果自负
     rm -rf /home/webroot && mkdir -p /home/webroot && mkdir -p /home/webtemp
-    pathing=$[$[$RANDOM % 3] + 1] 
+    pathing=$[$[$RANDOM % 4] + 1] 
     wget https://github.com/breakwa2333/v2ray-onekey/blob/Test/template/$pathing.zip?raw=true -O /home/webtemp/$pathing.zip
     unzip -d /home/webroot /home/webtemp/$pathing.zip
     judge "web 站点伪装"   
