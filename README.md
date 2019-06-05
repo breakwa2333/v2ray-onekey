@@ -1,7 +1,6 @@
 ## v2ray-onekey
-### Thanks wulabing's contribution
-#### Tips:
-* Original script is [here](https://github.com/wulabing/V2Ray_ws-tls_bash_onekey)
+### Thanks wulabing's contribution original script is [here](https://github.com/wulabing/V2Ray_ws-tls_bash_onekey)
+### Tips:
 * Changelog
   * Fixed the V2ray viersion at 4.18
   * Allow TLS1.2 only
