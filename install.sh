@@ -170,8 +170,10 @@ modify_nginx(){
 }
 web_camouflage(){
     ##请注意 这里和LNMP脚本的默认路径冲突，千万不要在安装了LNMP的环境下使用本脚本，否则后果自负
-    rm -rf /home/webroot && mkdir -p /home/webroot && cd /home/webroot
-    git clone https://github.com/wulabing/sCalc.git
+    rm -rf /home/webroot && mkdir -p /home/webroot && mkdir -p /home/webtemp
+    pathing=$[$[$RANDOM % 3] + 1] 
+    wget https://github.com/breakwa2333/v2ray-onekey/blob/Test/template/$pathing.zip?raw=true -O /home/webtemp/$pathing.zip
+    unzip -d /home/webroot /home/webtemp/$pathing.zip
     judge "web 站点伪装"   
 }
 v2ray_install(){
@@ -220,7 +222,7 @@ ssl_install(){
 
 }
 domain_check(){
-    stty erase '^H' && read -p "请输入你的域名信息(eg:www.wulabing.com):" domain
+    stty erase '^H' && read -p "请输入你的域名信息(eg:www.v2ray.com):" domain
     domain_ip=`ping ${domain} -c 1 | sed '1{s/[^(]*(//;s/).*//;q}'`
     echo -e "${OK} ${GreenBG} 正在获取 公网ip 信息，请耐心等待 ${Font}"
     local_ip=`curl -4 ip.sb`
@@ -293,7 +295,7 @@ nginx_conf_add(){
         ssl_ciphers           AESGCM;
         server_name           serveraddr.com;
         index index.html index.htm;
-        root  /home/webroot/sCalc;
+        root  /home/webroot;
         error_page 400 = /400.html;
         location /ray/ 
         {
