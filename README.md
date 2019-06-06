@@ -14,3 +14,4 @@ bash <(curl -L -s dos2unix https://raw.githubusercontent.com/breakwa2333/v2ray-o
 ### Goal:
 * ~~Random camouflage website~~
 * Remove installed file before installing
+* Install BBR Plus
