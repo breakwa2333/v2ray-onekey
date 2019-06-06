@@ -25,7 +25,7 @@ Error="${Red}[错误]${Font}"
 test(){
     a=$(cat /proc/version)
     echo $a
-    if [${a:14:1} -ge 4 && ${a:16:1} -ge 1];then
+    if [${a:14:1} ge 4 && ${a:16:1} ge 1];then
         echo OK-BBR
     else
         echo NO-BBR
