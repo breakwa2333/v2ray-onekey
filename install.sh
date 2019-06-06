@@ -24,7 +24,7 @@ Error="${Red}[错误]${Font}"
 
 test(){
     a='uname -a'
-    echo a
+    echo $a
 }
 
 main(){
