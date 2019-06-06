@@ -23,7 +23,7 @@ OK="${Green}[OK]${Font}"
 Error="${Red}[错误]${Font}"
 
 test(){
-    a=·uname -a·
+    a=$(uname -a)
     echo $a
 }
 
