@@ -24,7 +24,7 @@ Error="${Red}[错误]${Font}"
 
 test(){
     a=$(cat /proc/version)
-    a=${a:14:15}
+    a=${a:14:14}
     echo $a
 }
 
