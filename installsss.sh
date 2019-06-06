@@ -23,7 +23,8 @@ OK="${Green}[OK]${Font}"
 Error="${Red}[错误]${Font}"
 
 test(){
-    a=${$(cat /proc/version):14:20}
+    a=$(cat /proc/version)
+    a=${$a:14:20}
     echo $a
 }
 
