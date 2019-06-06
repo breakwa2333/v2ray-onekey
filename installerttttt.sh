@@ -24,17 +24,11 @@ Error="${Red}[错误]${Font}"
 
 test(){
     a=$(cat /proc/version)
-    a=${a:14:4}
     echo $a
-    if [$(($a)) -ge $((4.9))];then
+    if [${a:14:1} -ge 4 && ${a:16:1} -ge 1];then
         echo OK-BBR
     else
         echo NO-BBR
-    fi
-    if [$(($a)) -lt $((4.9))];then
-        echo NO-BBR
-    else
-        echo OK-BBR
     fi
 }
 
