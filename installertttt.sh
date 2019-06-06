@@ -26,12 +26,12 @@ test(){
     a=$(cat /proc/version)
     a=${a:14:4}
     echo $a
-    if [${{$a}} -ge ${{4.9}}];then
+    if [$(($a)) -ge $((4.9))];then
         echo OK-BBR
     else
         echo NO-BBR
     fi
-    if [${{$a}} -lt ${{4.9}}];then
+    if [$(($a)) -lt $((4.9))];then
         echo NO-BBR
     else
         echo OK-BBR
