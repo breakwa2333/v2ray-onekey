@@ -169,11 +169,12 @@ modify_nginx(){
 }
 web_camouflage(){
     ##请注意 这里和LNMP脚本的默认路径冲突，千万不要在安装了LNMP的环境下使用本脚本，否则后果自负
-    rm -rf /home/webroot && mkdir -p /home/webroot && mkdir -p /home/webtemp
+    rm -rf /home/webroot && mkdir -p /home/webroot && mkdir -p /home/webtemp && mkdir -p /home/webroot/jsproxy
     pathing=$[$[$RANDOM % 5] + 1] 
     wget https://github.com/breakwa2333/v2ray-onekey/blob/master/template/$pathing.zip?raw=true -O /home/webtemp/$pathing.zip
     unzip -d /home/webroot /home/webtemp/$pathing.zip
-    wget https://raw.githubusercontent.com/breakwa2333/jsproxy/gh-pages/assets/bundle.0668cc6d.js -O /home/webroot/bundle.0668cc6d.js
+    wget https://raw.githubusercontent.com/breakwa2333/jsproxy/gh-pages/assets/bundle.0668cc6d.js -O /home/webroot/jsproxy/bundle.0668cc6d.js
+    wget https://raw.githubusercontent.com/breakwa2333/jsproxy/gh-pages/assets/index_v3.html -O /home/webroot/jsproxy/index_v3.html
     judge "web 站点伪装"   
 }
 v2ray_install(){
