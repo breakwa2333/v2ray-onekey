@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 #====================================================
 #	System Request:Debian 7+/Ubuntu 14.04+/Centos 6+
@@ -36,7 +36,6 @@ source /etc/os-release
 VERSION=`echo ${VERSION} | awk -F "[()]" '{print $2}'`
 
 check_system(){
-    
     if [[ "${ID}" == "centos" && ${VERSION_ID} -ge 7 ]];then
         echo -e "${OK} ${GreenBG} 当前系统为 Centos ${VERSION_ID} ${VERSION} ${Font} "
         INS="yum"
@@ -171,7 +170,7 @@ modify_nginx(){
 web_camouflage(){
     ##请注意 这里和LNMP脚本的默认路径冲突，千万不要在安装了LNMP的环境下使用本脚本，否则后果自负
     rm -rf /home/webroot && mkdir -p /home/webroot && mkdir -p /home/webtemp
-    pathing=$[$[$RANDOM % 6] + 1] 
+    pathing=$[$[$RANDOM % 5] + 1] 
     wget https://github.com/breakwa2333/v2ray-onekey/blob/master/template/$pathing.zip?raw=true -O /home/webtemp/$pathing.zip
     unzip -d /home/webroot /home/webtemp/$pathing.zip
     wget https://raw.githubusercontent.com/breakwa2333/jsproxy/gh-pages/assets/bundle.0668cc6d.js -O /home/webroot/bundle.0668cc6d.js
@@ -358,6 +357,10 @@ show_information(){
 
     
 
+}
+
+install_bbr_plus(){
+    bash -c "$(wget --no-check-certificate -qO- https://github.com/Aniverse/TrCtrlProToc0l/raw/master/A)"
 }
 
 main(){
