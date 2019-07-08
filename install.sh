@@ -173,8 +173,6 @@ web_camouflage(){
     pathing=$[$[$RANDOM % 5] + 1] 
     wget https://github.com/breakwa2333/v2ray-onekey/blob/master/template/$pathing.zip?raw=true -O /home/webtemp/$pathing.zip
     unzip -d /home/webroot /home/webtemp/$pathing.zip
-    wget https://raw.githubusercontent.com/breakwa2333/jsproxy/gh-pages/assets/bundle.0668cc6d.js -O /home/webroot/jsproxy/bundle.0668cc6d.js
-    wget https://raw.githubusercontent.com/breakwa2333/jsproxy/gh-pages/assets/index_v3.html -O /home/webroot/jsproxy/index_v3.html
     judge "web 站点伪装"   
 }
 v2ray_install(){
@@ -224,8 +222,8 @@ ssl_install(){
 }
 domain_check(){
     stty erase '^H' && read -p "请输入你的域名信息(eg:www.v2ray.com):" domain
-    domain_ip=`ping ${domain} -c 1 | sed '1{s/[^(]*(//;s/).*//;q}'`
     echo -e "${OK} ${GreenBG} 正在获取 公网ip 信息，请耐心等待 ${Font}"
+    domain_ip=`ping ${domain} -c 1 | sed '1{s/[^(]*(//;s/).*//;q}'`
     local_ip=`curl -4 ip.sb`
     echo -e "域名dns解析IP：${domain_ip}"
     echo -e "本机IP: ${local_ip}"
