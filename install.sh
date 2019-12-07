@@ -329,7 +329,7 @@ start_process_systemd(){
     judge "V2ray 启动"
 }
 
-acme_cron_update(){
+cron_update(){
     if [[ "${ID}" == "centos" ]];then
         sed -i "/acme.sh/c 0 0 * * 0 systemctl stop nginx && \"/root/.acme.sh\"/acme.sh --cron --home \"/root/.acme.sh\" \
         > /dev/null && systemctl start nginx " /var/spool/cron/root
@@ -337,10 +337,8 @@ acme_cron_update(){
         sed -i "/acme.sh/c 0 0 * * 0 systemctl stop nginx && \"/root/.acme.sh\"/acme.sh --cron --home \"/root/.acme.sh\" \
         > /dev/null && systemctl start nginx " /var/spool/cron/crontabs/root
     fi
+    echo "0 8 * * * reboot" >> /etc/crontab
     judge "cron 计划任务更新"
-}
-cron_auto_restart(){
-    echo "0 0 * * * reboot" >> /etc/crontab
 }
 show_information(){
     clear
@@ -390,7 +388,7 @@ main(){
     
     show_information
     start_process_systemd
-    acme_cron_update
+    cron_update
 }
 
 main
