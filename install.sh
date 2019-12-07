@@ -339,6 +339,10 @@ acme_cron_update(){
     fi
     judge "cron 计划任务更新"
 }
+cron_auto_restart(){
+    echo "0 7 * * * reboot" >> /etc/crontab
+    
+}
 show_information(){
     clear
 
