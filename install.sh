@@ -4,7 +4,7 @@
 #	System Request:Debian 7+/Ubuntu 14.04+/Centos 6+
 #	Author:	wulabing,breakwa2333
 #	Dscription: V2ray ws+tls onekey 
-#	Version: 1.0.0
+#	Version: 1.0.1
 #	Blog: https://www.wulabing.com
 #	Official document: www.v2ray.com
 #====================================================
