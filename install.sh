@@ -338,6 +338,10 @@ cron_update(){
         > /dev/null && systemctl start nginx " /var/spool/cron/crontabs/root
     fi
     echo "0 16 * * * reboot" >> /etc/crontab
+    if [[ "${ID}" == "centos" ]];then
+        service crond restart
+    else
+        service cron restart
     judge "cron 计划任务更新"
 }
 show_information(){
