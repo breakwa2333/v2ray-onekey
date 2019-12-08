@@ -337,7 +337,7 @@ cron_update(){
         sed -i "/acme.sh/c 0 0 * * 0 systemctl stop nginx && \"/root/.acme.sh\"/acme.sh --cron --home \"/root/.acme.sh\" \
         > /dev/null && systemctl start nginx " /var/spool/cron/crontabs/root
     fi
-    echo "0 16 * * * reboot" >> /etc/crontab
+    echo "0 16 * * * root reboot" >> /etc/crontab
     if [[ "${ID}" == "centos" ]];then
         service crond restart
     else
