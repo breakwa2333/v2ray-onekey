@@ -342,6 +342,7 @@ cron_update(){
         service crond restart
     else
         service cron restart
+    fi
     judge "cron 计划任务更新"
 }
 show_information(){
