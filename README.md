@@ -2,8 +2,8 @@
 ### Wulabing's original script is [here](https://github.com/wulabing/V2Ray_ws-tls_bash_onekey)  and thanks wulabing's contribution
 * Changelog
   * **Random camouflage website**
-  * Fixed the v2ray viersion at 4.18
-  * Allow TLS1.2 only
+  * Fixed the v2ray viersion at 4.25.1
+  * Allow TLS1.3 only
   * Allow AES-GCM only
   * ECC384
   * HSTS
