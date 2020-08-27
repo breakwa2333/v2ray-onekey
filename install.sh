@@ -95,32 +95,6 @@ judge(){
         exit 1
     fi
 }
-ntpdate_install(){
-    if [[ "${ID}" == "centos" ]];then
-        ${INS} install ntpdate -y
-    else
-        ${INS} update
-        ${INS} install ntpdate -y
-    fi
-    judge "安装 NTPdate 时间同步服务 "
-}
-time_modify(){
-
-    ntpdate_install
-
-    systemctl stop ntp &>/dev/null
-
-    echo -e "${Info} ${GreenBG} 正在进行时间同步 ${Font}"
-    ntpdate time.nist.gov
-
-    if [[ $? -eq 0 ]];then 
-        echo -e "${OK} ${GreenBG} 时间同步成功 ${Font}"
-        echo -e "${OK} ${GreenBG} 当前系统时间 `date -R`（请注意时区间时间换算，换算后时间误差应为三分钟以内）${Font}"
-        sleep 1
-    else
-        echo -e "${Error} ${RedBG} 时间同步失败，请检查ntpdate服务是否正常工作 ${Font}"
-    fi 
-}
 dependency_install(){
     ${INS} install wget git lsof -y
 
@@ -181,12 +155,12 @@ v2ray_install(){
     fi
 
     mkdir -p /root/v2ray && cd /root/v2ray
-    wget --no-check-certificate https://install.direct/go.sh
+    wget --no-check-certificate https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh
 
     ## wget http://install.direct/go.sh
     
     if [[ -f go.sh ]];then
-        bash go.sh --force --version v4.18.0
+        bash go.sh --force --version v4.25.1
         judge "安装 V2ray"
     else
         echo -e "${Error} ${RedBG} V2ray 安装文件下载失败，请检查下载地址是否可用 ${Font}"
@@ -290,7 +264,7 @@ nginx_conf_add(){
         ssl on;
         ssl_certificate       /etc/v2ray/v2ray.crt;
         ssl_certificate_key   /etc/v2ray/v2ray.key;
-        ssl_protocols         TLSv1.2;
+        ssl_protocols         TLSv1.3;
         ssl_ciphers           AESGCM;
         server_name           serveraddr.com;
         index index.html index.htm;
@@ -371,7 +345,6 @@ install_bbr_plus(){
 main(){
     is_root
     check_system
-    time_modify
     dependency_install
     domain_check
     port_alterid_set
