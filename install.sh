@@ -156,11 +156,9 @@ v2ray_install(){
 
     mkdir -p /root/v2ray && cd /root/v2ray
     wget --no-check-certificate https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh
-
-    ## wget http://install.direct/go.sh
     
-    if [[ -f go.sh ]];then
-        bash go.sh --force --version v4.25.1
+    if [[ -f install-release.sh ]];then
+        bash install-release.sh --force --version v4.25.1
         judge "安装 V2ray"
     else
         echo -e "${Error} ${RedBG} V2ray 安装文件下载失败，请检查下载地址是否可用 ${Font}"
