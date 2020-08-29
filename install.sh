@@ -346,7 +346,6 @@ main(){
     dependency_install
     domain_check
     port_alterid_set
-    port_exist_check 80
     port_exist_check ${port}
     v2ray_install
     nginx_install
