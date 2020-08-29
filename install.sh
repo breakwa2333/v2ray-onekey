@@ -249,10 +249,10 @@ acme(){
     fi
 }
 v2ray_conf_add(){
-    cd /etc/v2ray
+    mkdir -p /etc/v2ray && cd /etc/v2ray
     wget https://raw.githubusercontent.com/breakwa2333/v2ray-onekey/master/tls/config.json -O config.json
-modify_port_UUID
-judge "V2ray 配置修改"
+    modify_port_UUID
+    judge "V2ray 配置修改"
 }
 nginx_conf_add(){
     touch ${nginx_conf_dir}/v2ray.conf
