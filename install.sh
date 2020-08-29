@@ -356,6 +356,7 @@ main(){
 
     #改变证书安装位置，防止端口冲突关闭相关应用
     systemctl stop nginx
+    systemctl enable v2ray.service
     systemctl stop v2ray
     
     #将证书生成放在最后，尽量避免多次尝试脚本从而造成的多次证书申请
